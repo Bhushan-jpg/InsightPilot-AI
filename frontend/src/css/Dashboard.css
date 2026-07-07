@@ -1,0 +1,524 @@
+/* ==========================
+   Dashboard Layout
+========================== */
+
+.dashboard {
+    min-height: 100vh;
+    background: #f4f7fb;
+    margin-left: 250px;
+}
+
+.dashboard-container {
+    max-width: 1450px;
+    margin: auto;
+    padding: 35px;
+}
+
+/* ==========================
+   Header
+========================== */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* ==========================
+   Upload Section
+========================== */
+
+#upload {
+    margin-bottom: 30px;
+}
+
+/* ==========================
+   Empty Dashboard
+========================== */
+
+.empty-dashboard {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 60px;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+
+}
+
+.empty-dashboard h2{
+
+    font-size:28px;
+
+    color:#1e293b;
+
+    margin-bottom:15px;
+
+}
+
+.empty-dashboard p{
+
+    color:#64748b;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   Report Button
+========================== */
+
+.report-section{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin:25px 0;
+
+}
+
+.report-btn{
+
+    background:linear-gradient(
+        135deg,
+        #4f46e5,
+        #6366f1
+    );
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.report-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(79,70,229,.35);
+
+}
+
+/* ==========================
+   Section Card
+========================== */
+
+.section-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    margin-bottom:28px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+.section-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.1);
+
+}
+
+.section-card h2{
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+    color:#1e293b;
+
+}
+
+/* ==========================
+   KPI Cards
+========================== */
+
+.kpi-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+.kpi-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+    border:1px solid #eef2ff;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.kpi-card h2{
+
+    font-size:30px;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.kpi-card p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   Lists
+========================== */
+
+.section-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.section-card li{
+
+    background:#f8fafc;
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.section-card li:hover{
+
+    background:#eef4ff;
+
+}
+
+/* ==========================
+   ChatBot
+========================== */
+
+#chatbot{
+
+    margin-bottom:50px;
+
+}
+
+/* ==========================
+   Smooth Scroll
+========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================
+   Loading
+========================== */
+
+.loading{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+    font-weight:600;
+
+    color:#2563eb;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:1100px){
+
+.dashboard{
+
+    margin-left:0;
+
+}
+
+.dashboard-container{
+
+    padding:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.page-header h1{
+
+    font-size:28px;
+
+}
+
+.page-header p{
+
+    font-size:14px;
+
+}
+
+.report-section{
+
+    justify-content:center;
+
+}
+
+.report-btn{
+
+    width:100%;
+
+}
+
+.section-card{
+
+    padding:20px;
+
+}
+
+.kpi-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.dashboard-container{
+
+    padding:15px;
+
+}
+
+.empty-dashboard{
+
+    padding:35px 20px;
+
+}
+
+.empty-dashboard h2{
+
+    font-size:22px;
+
+}
+
+}
+/* =========================
+   Upload Box
+========================= */
+
+.upload-box{
+
+    background:#ffffff;
+    border:2px dashed #dbe4ff;
+    border-radius:20px;
+
+    padding:40px;
+
+    margin:30px 0;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    transition:.3s;
+
+}
+
+.upload-box:hover{
+
+    border-color:#4f46e5;
+
+    transform:translateY(-2px);
+
+}
+
+.upload-icon{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.upload-box h2{
+
+    font-size:30px;
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.upload-box p{
+
+    color:#64748b;
+
+    font-size:16px;
+
+    margin-bottom:8px;
+
+}
+
+.sub-text{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
+
+.select-btn{
+
+    display:inline-block;
+
+    background:#eef2ff;
+
+    color:#4f46e5;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    margin-right:10px;
+
+}
+
+.select-btn:hover{
+
+    background:#4f46e5;
+
+    color:white;
+
+}
+
+.file-name{
+
+    margin:20px auto;
+
+    padding:12px;
+
+    width:fit-content;
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    color:#475569;
+
+}
+
+.analyze-btn{
+
+    margin-top:15px;
+
+    background:linear-gradient(135deg,#4f46e5,#6366f1);
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.analyze-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,70,229,.3);
+
+}

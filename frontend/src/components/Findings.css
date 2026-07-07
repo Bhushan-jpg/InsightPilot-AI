@@ -1,0 +1,91 @@
+.findings-card{
+
+
+    margin-top:25px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,0.08);
+
+
+    border-left:6px solid #f59e0b;
+
+}
+
+
+
+.findings-header{
+
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.findings-icon{
+
+
+width:55px;
+
+height:55px;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+border-radius:15px;
+
+background:#fef3c7;
+
+font-size:30px;
+
+
+}
+
+
+
+.findings-header h2{
+
+margin:0;
+
+}
+
+
+
+.findings-header p{
+
+margin:5px 0;
+
+color:#6b7280;
+
+}
+
+
+
+.findings-body li{
+
+margin:12px 0;
+
+color:#374151;
+
+line-height:1.5;
+
+}

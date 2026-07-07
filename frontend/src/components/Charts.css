@@ -1,0 +1,260 @@
+.charts-section{
+
+    margin-top:30px;
+
+}
+
+.charts-section h2{
+
+    margin-bottom:8px;
+
+    color:#1f2937;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.chart-subtitle{
+
+    color:#6b7280;
+
+    margin-bottom:25px;
+
+    font-size:15px;
+
+}
+
+.chart-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+    gap:25px;
+
+    align-items:start;
+
+}
+
+.chart-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    height:auto;
+
+    min-height:430px;
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.15);
+
+}
+
+.chart-header h3{
+
+    margin:0;
+
+    font-size:24px;
+
+    color:#1f2937;
+
+}
+
+.chart-header p{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+.chart-wrapper{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.about-btn{
+
+    width:100%;
+
+    margin-top:18px;
+
+    border:none;
+
+    background:#eef4ff;
+
+    color:#2563eb;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.about-btn:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.chart-analysis{
+
+    margin-top:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    animation:fadeIn .3s ease;
+
+}
+
+.analysis-card{
+
+    background:#f8fafc;
+
+    border-left:5px solid #2563eb;
+
+    border-radius:12px;
+
+    padding:16px;
+
+}
+
+.analysis-card h4{
+
+    margin:0 0 8px 0;
+
+    color:#1e293b;
+
+    font-size:18px;
+
+}
+
+.analysis-card p{
+
+    margin:0;
+
+    color:#475569;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+}
+
+.analysis-card:nth-child(2){
+
+    border-left-color:#10b981;
+
+}
+
+.analysis-card:nth-child(3){
+
+    border-left-color:#f59e0b;
+
+}
+
+.recharts-wrapper{
+
+    margin:auto;
+
+}
+
+.recharts-default-legend{
+
+    font-size:12px !important;
+
+}
+
+.recharts-tooltip-wrapper{
+
+    font-size:13px;
+
+}
+.recharts-responsive-container{
+
+    margin-bottom:15px;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .chart-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chart-wrapper{
+
+        height:200px;
+
+    }
+
+    .chart-header h3{
+
+        font-size:20px;
+
+    }
+
+}

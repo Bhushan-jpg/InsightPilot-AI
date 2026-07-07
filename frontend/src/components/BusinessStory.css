@@ -1,0 +1,25 @@
+.story-text{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#444;
+
+    white-space:pre-line;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    margin-bottom:25px;
+
+}

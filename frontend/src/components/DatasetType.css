@@ -1,0 +1,31 @@
+.dataset-type-card{
+
+    background:white;
+
+    margin:20px 0;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.dataset-type-card h1{
+
+    color:#2563eb;
+
+    margin:15px 0;
+
+}
+
+.dataset-type-card p{
+
+    color:#666;
+
+    font-size:18px;
+
+}

@@ -1,0 +1,100 @@
+.recommendation-card{
+
+
+    margin-top:25px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,0.08);
+
+    border-left:6px solid #22c55e;
+
+}
+
+
+
+.recommendation-header{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.recommendation-icon{
+
+
+    width:55px;
+
+    height:55px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:15px;
+
+    background:#dcfce7;
+
+    font-size:30px;
+
+
+}
+
+
+
+.recommendation-header h2{
+
+    margin:0;
+
+    font-size:24px;
+
+}
+
+
+
+.recommendation-header p{
+
+    margin:5px 0;
+
+    color:#6b7280;
+
+}
+
+
+
+.recommendation-body ul{
+
+    padding-left:20px;
+
+}
+
+
+
+.recommendation-body li{
+
+
+    margin:12px 0;
+
+    color:#374151;
+
+    line-height:1.5;
+
+}
