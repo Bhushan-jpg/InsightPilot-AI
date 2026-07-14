@@ -2,61 +2,50 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./ChatBot.css";
 
-
 function ChatBot() {
-
 
     const [message, setMessage] = useState("");
 
     const [loading, setLoading] = useState(false);
 
-
     const [messages, setMessages] = useState([
 
         {
+
             sender: "AI",
+
             text:
-            "👋 Hello! I'm InsightPilot AI.\nAsk me anything about your uploaded dataset."
+                "👋 Welcome to InsightPilot AI!\n\nI'm your intelligent business analytics assistant.\nAsk me anything about your uploaded dataset."
+
         }
 
     ]);
 
-
     const chatEndRef = useRef(null);
 
-
-
-    // Auto scroll
-
-    useEffect(()=>{
+    useEffect(() => {
 
         chatEndRef.current?.scrollIntoView({
-            behavior:"smooth"
+
+            behavior: "smooth"
+
         });
 
-    },[messages, loading]);
-
-
-
+    }, [messages, loading]);
 
     const sendMessage = async (text = message) => {
 
-
-        if(!text.trim()) return;
-
-
+        if (!text.trim()) return;
 
         const userMessage = {
 
-            sender:"USER",
+            sender: "USER",
 
-            text:text
+            text: text
 
         };
 
-
-
-        setMessages(prev=>[
+        setMessages(prev => [
 
             ...prev,
 
@@ -64,60 +53,33 @@ function ChatBot() {
 
         ]);
 
-
-
         setMessage("");
 
         setLoading(true);
 
-
-
-        try{
-
+        try {
 
             const response = await axios.post(
 
                 "http://localhost:8000/chat",
 
                 {
-                    question:text
+
+                    question: text
+
                 }
 
             );
 
-
-
-            setMessages(prev=>[
+            setMessages(prev => [
 
                 ...prev,
 
                 {
 
-                    sender:"AI",
+                    sender: "AI",
 
-                    text:
-                    response.data.answer
-
-                }
-
-            ]);
-
-
-
-        }
-        catch(error){
-
-
-            setMessages(prev=>[
-
-                ...prev,
-
-                {
-
-                    sender:"AI",
-
-                    text:
-                    "Sorry, something went wrong."
+                    text: response.data.answer
 
                 }
 
@@ -125,19 +87,32 @@ function ChatBot() {
 
         }
 
+        catch (error) {
 
+            setMessages(prev => [
+
+                ...prev,
+
+                {
+
+                    sender: "AI",
+
+                    text:
+                        "❌ Sorry, I couldn't process your request right now."
+
+                }
+
+            ]);
+
+        }
 
         setLoading(false);
 
     };
 
+    const handleKeyDown = (e) => {
 
-
-
-    const handleKeyDown=(e)=>{
-
-
-        if(e.key==="Enter"){
+        if (e.key === "Enter") {
 
             sendMessage();
 
@@ -145,48 +120,66 @@ function ChatBot() {
 
     };
 
+    const suggestions = [
 
+        "📊 Summarize dataset",
 
+        "📈 Explain KPIs",
 
-    const suggestions=[
+        "🔍 Show important findings",
 
-        "Summarize dataset",
+        "💡 Give recommendations",
 
-        "Show KPIs",
+        "📉 Explain charts",
 
-        "Find important findings",
-
-        "Give recommendations",
-
-        "Explain charts"
+        "📦 Dataset overview"
 
     ];
-
-
-
     return (
 
-        <div className="chat-container">
+    <div className="chat-container">
 
+        <div className="chat-header">
 
+            <div className="chat-header-left">
 
-            <h2>
-                💬 Ask InsightPilot AI
-            </h2>
+                <div className="bot-avatar">
 
+                    🤖
 
+                </div>
 
+                <div>
 
-            <div className="suggestions">
+                    <h2>
 
+                        InsightPilot AI Assistant
 
-                {suggestions.map((item,index)=>(
+                    </h2>
+
+                    <p>
+
+                        Powered by Artificial Intelligence
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div className="suggestions">
+
+            {
+
+                suggestions.map((item,index)=>(
 
                     <button
 
-                    key={index}
+                        key={index}
 
-                    onClick={()=>sendMessage(item)}
+                        onClick={()=>sendMessage(item)}
 
                     >
 
@@ -194,108 +187,158 @@ function ChatBot() {
 
                     </button>
 
-                ))}
+                ))
 
+            }
 
-            </div>
+        </div>
 
+        <div className="chat-box">
 
+            {
 
-
-
-            <div className="chat-box">
-
-
-
-                {messages.map((msg,index)=>(
-
+                messages.map((msg,index)=>(
 
                     <div
 
-                    key={index}
+                        key={index}
 
-                    className={
-                        msg.sender==="AI"
-                        ?
-                        "ai-message"
-                        :
-                        "user-message"
-                    }
+                        className={
+
+                            msg.sender==="AI"
+
+                            ?
+
+                            "message-row ai"
+
+                            :
+
+                            "message-row user"
+
+                        }
 
                     >
 
-                        {msg.text}
+                        {
+
+                            msg.sender==="AI"
+
+                            &&
+
+                            <div className="avatar">
+
+                                🤖
+
+                            </div>
+
+                        }
+
+                        <div
+
+                            className={
+
+                                msg.sender==="AI"
+
+                                ?
+
+                                "ai-message"
+
+                                :
+
+                                "user-message"
+
+                            }
+
+                        >
+
+                            {msg.text}
+
+                        </div>
+
+                        {
+
+                            msg.sender==="USER"
+
+                            &&
+
+                            <div className="avatar user-avatar">
+
+                                👤
+
+                            </div>
+
+                        }
 
                     </div>
 
+                ))
 
-                ))}
+            }
 
+            {
 
+                loading &&
 
-                {loading && (
+                <div className="message-row ai">
 
-                    <div className="ai-message">
+                    <div className="avatar">
 
-                        InsightPilot AI is thinking...
+                        🤖
 
                     </div>
 
-                )}
+                    <div className="typing">
 
+                        <span></span>
 
+                        <span></span>
 
+                        <span></span>
 
-                <div ref={chatEndRef}/>
+                    </div>
 
+                </div>
 
-            </div>
+            }
 
+            <div ref={chatEndRef}></div>
 
+        </div>
 
+        <div className="input-area">
 
-
-
-            <div className="input-area">
-
-
-                <input
+            <input
 
                 value={message}
 
                 onChange={
+
                     e=>setMessage(e.target.value)
+
                 }
 
                 onKeyDown={handleKeyDown}
 
-                placeholder="Ask something about your dataset..."
+                placeholder="Ask anything about your dataset..."
 
-                />
+            />
 
-
-
-                <button
+            <button
 
                 onClick={()=>sendMessage()}
 
-                >
+            >
 
-                    Send
+                ➜
 
-                </button>
-
-
-            </div>
-
-
-
+            </button>
 
         </div>
 
-    );
+    </div>
+
+);
 
 }
-
 
 export default ChatBot;

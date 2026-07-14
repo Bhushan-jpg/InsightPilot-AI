@@ -2,73 +2,97 @@ import "./Navbar.css";
 
 function Navbar() {
 
+    const menuItems = [
+
+        { id: "upload", icon: "📂", label: "Upload Dataset" },
+        { id: "kpis", icon: "📊", label: "Business Overview" },
+        { id: "dataset-type", icon: "🗂", label: "Dataset Profile" },
+        { id: "summary", icon: "🧠", label: "AI Summary" },
+        { id: "story", icon: "📖", label: "Business Story" },
+        { id: "charts", icon: "📈", label: "Analytics" },
+        { id: "findings", icon: "🔍", label: "Findings" },
+        { id: "recommendations", icon: "💡", label: "Recommendations" },
+        { id: "chatbot", icon: "🤖", label: "AI Assistant" }
+
+    ];
+
     const scrollToSection = (id) => {
 
         const section = document.getElementById(id);
 
-        if(section){
+        console.log("Clicked:", id);
+        console.log("Found:", section);
 
-            section.scrollIntoView({
+        if (!section) {
 
-                behavior:"smooth"
+            alert(id + " section not found");
 
-            });
+            return;
 
         }
 
+        section.scrollIntoView({
+
+            behavior: "smooth",
+            block: "start"
+
+        });
+
     };
 
-    return(
+    return (
 
-        <div className="sidebar">
+        <aside className="sidebar">
 
             <div className="logo">
 
-                🚀 InsightPilot AI
+                🚀
+
+                <div>
+
+                    <h2>InsightPilot</h2>
+
+                    <p>Enterprise AI</p>
+
+                </div>
 
             </div>
 
             <div className="menu">
 
-                <button onClick={()=>scrollToSection("upload")}>
-                    📂 Upload Dataset
-                </button>
+                {
 
-                <button onClick={()=>scrollToSection("kpis")}>
-                    📊 Business Overview
-                </button>
+                    menuItems.map((item) => (
 
-                <button onClick={()=>scrollToSection("dataset-type")}>
-                    🧠 Dataset Type
-                </button>
+                        <button
 
-                <button onClick={()=>scrollToSection("summary")}>
-                    🤖 AI Summary
-                </button>
+                            key={item.id}
 
-                <button onClick={()=>scrollToSection("story")}>
-                    📖 Business Story
-                </button>
+                            onClick={() => scrollToSection(item.id)}
 
-                <button onClick={()=>scrollToSection("charts")}>
-                    📈 Charts
-                </button>
+                        >
 
-                <button onClick={()=>scrollToSection("findings")}>
-                    🔍 Findings
-                </button>
+                            <span className="icon">
 
-                <button onClick={()=>scrollToSection("recommendations")}>
-                    💡 Recommendations
-                </button>
+                                {item.icon}
 
-                <button onClick={()=>scrollToSection("chatbot")}>
-                    💬 AI Chat
-                </button>
+                            </span>
+
+                            <span>
+
+                                {item.label}
+
+                            </span>
+
+                        </button>
+
+                    ))
+
+                }
 
             </div>
 
-        </div>
+        </aside>
 
     );
 

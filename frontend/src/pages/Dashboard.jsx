@@ -45,7 +45,6 @@ function Dashboard() {
                 const canvas = await html2canvas(chartDiv, {
 
                     scale: 2,
-
                     useCORS: true
 
                 });
@@ -57,7 +56,6 @@ function Dashboard() {
             const reportData = {
 
                 ...data,
-
                 chart_image: chartImage
 
             };
@@ -96,7 +94,11 @@ function Dashboard() {
 
             <div className="loading">
 
-                Loading Dashboard...
+                <div className="loader"></div>
+
+                <h2>Loading InsightPilot...</h2>
+
+                <p>Preparing AI Analytics Dashboard</p>
 
             </div>
 
@@ -112,49 +114,34 @@ function Dashboard() {
 
             <div className="dashboard-container">
 
-                <div className="page-header">
+                {/* ================= HERO ================= */}
 
-                    <div>
+                <div className="hero-section">
 
-                        <h1>🚀 InsightPilot AI Dashboard</h1>
+                    <div className="hero-left">
+
+                        <h1>🚀 InsightPilot AI</h1>
+
+                        <h2>Enterprise Analytics Platform</h2>
 
                         <p>
-                            AI Powered Business Intelligence Dashboard
+
+                            Upload • Analyze • Visualize • Generate AI Reports
+
                         </p>
 
                     </div>
 
-                </div>
+                    {data && (
 
-                <div id="upload">
-
-                    <UploadBox setData={setData} />
-
-                </div>
-
-                {!data && (
-
-                    <div className="empty-dashboard">
-
-                        <h2>📊 Welcome to InsightPilot AI</h2>
-
-                        <p>
-                            Upload your dataset and let AI generate business insights.
-                        </p>
-
-                    </div>
-
-                )}
-
-                {data && (
-
-                    <>
-
-                        <div className="report-section">
+                        <div className="hero-right">
 
                             <button
+
                                 className="report-btn"
+
                                 onClick={downloadReport}
+
                             >
 
                                 📄 Download AI Report
@@ -163,43 +150,96 @@ function Dashboard() {
 
                         </div>
 
-                        <div id="kpis">
+                    )}
+
+                </div>
+
+                {/* ================= Upload ================= */}
+
+                <section id="upload">
+
+                    <UploadBox setData={setData} />
+
+                </section>
+
+                {/* ================= Empty Dashboard ================= */}
+
+                {!data && (
+
+                    <div className="empty-dashboard">
+
+                        <h2>📊 Welcome to InsightPilot AI</h2>
+
+                        <p>
+
+                            Upload your CSV or Excel dataset and let AI automatically generate KPIs, business insights, intelligent visualizations, executive summaries and professional reports.
+
+                        </p>
+
+                    </div>
+
+                )}
+
+                {/* ================= Dashboard ================= */}
+
+                {data && (
+
+                    <>
+                                            {/* KPI Cards */}
+
+                        <section id="kpis" className="section-card">
+
+                            <h2 className="section-title">
+                                📈 Business KPIs
+                            </h2>
 
                             <KPICards data={data} />
 
-                        </div>
+                        </section>
 
-                        <div
-                            id="dataset-type"
-                            className="section-card"
-                        >
+                        {/* Dataset */}
+
+                        <section id="dataset-type" className="section-card">
+
+                            <h2 className="section-title">
+                                🗂 Dataset Profile
+                            </h2>
 
                             <DatasetType data={data} />
 
-                        </div>
+                        </section>
 
-                        <div
-                            id="summary"
-                            className="section-card"
-                        >
+                        {/* AI Summary */}
+
+                        <section id="summary" className="section-card">
+
+                            <h2 className="section-title">
+                                🧠 AI Executive Summary
+                            </h2>
 
                             <AISummary data={data} />
 
-                        </div>
+                        </section>
 
-                        <div
-                            id="story"
-                            className="section-card"
-                        >
+                        {/* Business Story */}
+
+                        <section id="story" className="section-card">
+
+                            <h2 className="section-title">
+                                📖 AI Business Story
+                            </h2>
 
                             <BusinessStory data={data} />
 
-                        </div>
+                        </section>
 
-                        <div
-                            id="charts"
-                            className="section-card"
-                        >
+                        {/* Charts */}
+
+                        <section id="charts" className="section-card">
+
+                            <h2 className="section-title">
+                                📊 Interactive Analytics Dashboard
+                            </h2>
 
                             <div id="report-charts">
 
@@ -207,34 +247,43 @@ function Dashboard() {
 
                             </div>
 
-                        </div>
+                        </section>
 
-                        <div
-                            id="findings"
-                            className="section-card"
-                        >
+                        {/* Findings */}
+
+                        <section id="findings" className="section-card">
+
+                            <h2 className="section-title">
+                                🔍 Key Findings
+                            </h2>
 
                             <Findings data={data} />
 
-                        </div>
+                        </section>
 
-                        <div
-                            id="recommendations"
-                            className="section-card"
-                        >
+                        {/* Recommendations */}
+
+                        <section id="recommendations" className="section-card">
+
+                            <h2 className="section-title">
+                                💡 AI Recommendations
+                            </h2>
 
                             <Recommendations data={data} />
 
-                        </div>
+                        </section>
 
-                        <div
-                            id="chatbot"
-                            className="section-card"
-                        >
+                        {/* ChatBot */}
+
+                        <section id="chatbot" className="section-card">
+
+                            <h2 className="section-title">
+                                🤖 AI Data Assistant
+                            </h2>
 
                             <ChatBot />
 
-                        </div>
+                        </section>
 
                     </>
 

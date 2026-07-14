@@ -1,91 +1,153 @@
 .findings-card{
 
+    background:#ffffff;
 
-    margin-top:25px;
+    border-radius:22px;
 
-    background:white;
+    padding:28px;
 
-    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
-    border-radius:20px;
-
-
-    box-shadow:
-    0 12px 35px rgba(0,0,0,0.08);
-
-
-    border-left:6px solid #f59e0b;
+    border:1px solid #eef2f7;
 
 }
-
-
 
 .findings-header{
 
+    display:flex;
 
-display:flex;
+    align-items:center;
 
-align-items:center;
+    gap:18px;
 
-gap:15px;
-
-margin-bottom:20px;
-
+    margin-bottom:30px;
 
 }
-
-
 
 .findings-icon{
 
+    width:60px;
 
-width:55px;
+    height:60px;
 
-height:55px;
+    border-radius:18px;
 
+    background:#fff7ed;
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-justify-content:center;
+    justify-content:center;
 
-
-border-radius:15px;
-
-background:#fef3c7;
-
-font-size:30px;
-
+    font-size:32px;
 
 }
-
-
 
 .findings-header h2{
 
-margin:0;
+    margin:0;
+
+    color:#111827;
+
+    font-size:26px;
 
 }
-
-
 
 .findings-header p{
 
-margin:5px 0;
+    margin-top:6px;
 
-color:#6b7280;
+    color:#64748b;
 
 }
 
+.findings-grid{
 
+    display:grid;
 
-.findings-body li{
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
 
-margin:12px 0;
+    gap:18px;
 
-color:#374151;
+}
 
-line-height:1.5;
+.finding-item{
+
+    display:flex;
+
+    gap:16px;
+
+    padding:20px;
+
+    background:#f8fafc;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+    border-left:5px solid #f59e0b;
+
+}
+
+.finding-item:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.finding-number{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    flex-shrink:0;
+
+}
+
+.finding-item h4{
+
+    margin:0 0 8px;
+
+    color:#1e293b;
+
+    font-size:18px;
+
+}
+
+.finding-item p{
+
+    margin:0;
+
+    color:#475569;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+@media(max-width:768px){
+
+.findings-grid{
+
+    grid-template-columns:1fr;
+
+}
 
 }

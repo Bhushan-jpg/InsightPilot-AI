@@ -1,25 +1,217 @@
-.story-text{
+/* ==========================================
+   BUSINESS STORY CARD
+========================================== */
 
-    font-size:18px;
+.business-story-card{
 
-    line-height:1.8;
+    background:#ffffff;
 
-    color:#444;
+    border-radius:22px;
+
+    padding:30px;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.business-story-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.15);
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.story-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.story-icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    font-size:34px;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+
+}
+
+.story-header h2{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#1e293b;
+
+}
+
+.story-header p{
+
+    margin-top:8px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+/* ==========================================
+   STORY SECTION
+========================================== */
+
+.story-section{
+
+    background:#ffffff;
+
+    border:1px solid #eef2ff;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    margin-bottom:22px;
+
+    transition:.3s;
+
+}
+
+.story-section:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.story-section h3{
+
+    margin-top:0;
+
+    margin-bottom:15px;
+
+    color:#1e293b;
+
+    font-size:20px;
+
+}
+
+.story-section p{
+
+    color:#475569;
+
+    line-height:1.9;
+
+    font-size:16px;
 
     white-space:pre-line;
 
 }
 
-.card{
+/* ==========================================
+   AI ANALYSIS
+========================================== */
 
-    background:white;
+.highlight-story{
 
-    padding:25px;
+    background:linear-gradient(
+        135deg,
+        #f8fbff,
+        #eef4ff
+    );
 
-    border-radius:12px;
+    border-left:6px solid #2563eb;
 
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-    margin-bottom:25px;
+/* ==========================================
+   RECOMMENDATION
+========================================== */
+
+.recommendation-story{
+
+    background:linear-gradient(
+        135deg,
+        #f3f8ff,
+        #eef2ff
+    );
+
+    border-left:6px solid #4f46e5;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.story-header{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.story-header h2{
+
+    font-size:24px;
+
+}
+
+.story-section{
+
+    padding:18px;
+
+}
+
+.story-section h3{
+
+    font-size:18px;
+
+}
+
+.story-section p{
+
+    font-size:15px;
+
+}
 
 }

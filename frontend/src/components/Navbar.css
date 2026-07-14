@@ -1,6 +1,10 @@
+/* ==========================================
+   SIDEBAR
+========================================== */
+
 .sidebar{
 
-    width:250px;
+    width:270px;
 
     height:100vh;
 
@@ -10,27 +14,69 @@
 
     top:0;
 
-    background:white;
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #f8fbff
+    );
+
+    border-right:1px solid #e5e7eb;
+
+    box-shadow:5px 0 35px rgba(0,0,0,.08);
 
     padding:30px 20px;
 
-    box-shadow:4px 0 20px rgba(0,0,0,.08);
-
     overflow-y:auto;
 
+    z-index:1000;
+
 }
+
+/* ==========================================
+   LOGO
+========================================== */
 
 .logo{
 
-    font-size:24px;
+    display:flex;
 
-    font-weight:700;
+    align-items:center;
 
-    color:#2563eb;
+    gap:15px;
 
     margin-bottom:40px;
 
+    padding-bottom:25px;
+
+    border-bottom:1px solid #eef2ff;
+
 }
+
+.logo h2{
+
+    margin:0;
+
+    font-size:24px;
+
+    color:#1e293b;
+
+    font-weight:700;
+
+}
+
+.logo p{
+
+    margin-top:5px;
+
+    font-size:14px;
+
+    color:#64748b;
+
+}
+
+/* ==========================================
+   MENU
+========================================== */
 
 .menu{
 
@@ -38,38 +84,200 @@
 
     flex-direction:column;
 
-    gap:15px;
+    gap:12px;
 
 }
 
+/* ==========================================
+   BUTTON
+========================================== */
+
 .menu button{
 
-    background:none;
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    width:100%;
+
+    background:transparent;
 
     border:none;
 
-    text-align:left;
+    border-radius:14px;
 
-    padding:14px 16px;
-
-    border-radius:12px;
+    padding:15px 18px;
 
     cursor:pointer;
 
+    color:#475569;
+
     font-size:15px;
 
-    color:#475569;
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.menu button .icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    background:#eef4ff;
+
+    font-size:20px;
 
     transition:.3s;
 
 }
 
+/* ==========================================
+   HOVER
+========================================== */
+
 .menu button:hover{
 
-    background:#eef2ff;
+    background:#eef4ff;
 
     color:#2563eb;
 
-    transform:translateX(5px);
+    transform:translateX(6px);
+
+}
+
+.menu button:hover .icon{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* ==========================================
+   ACTIVE
+========================================== */
+
+.menu button.active{
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+
+}
+
+.menu button.active .icon{
+
+    background:white;
+
+    color:#2563eb;
+
+}
+
+.menu button.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-20px;
+
+    top:8px;
+
+    bottom:8px;
+
+    width:6px;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.sidebar::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+.sidebar{
+
+    width:100%;
+
+    height:auto;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+.menu{
+
+    flex-direction:row;
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+
+}
+
+.menu button{
+
+    min-width:220px;
+
+}
+
+.menu button.active::before{
+
+    display:none;
+
+}
 
 }

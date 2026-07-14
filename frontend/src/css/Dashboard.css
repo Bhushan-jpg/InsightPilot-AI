@@ -522,3 +522,294 @@ html{
     box-shadow:0 8px 20px rgba(79,70,229,.3);
 
 }
+/* ======================================================
+   HERO SECTION
+====================================================== */
+
+.hero-section{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    border-radius:22px;
+
+    padding:40px;
+
+    color:white;
+
+    margin-bottom:35px;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+
+}
+
+.hero-left h1{
+
+    font-size:42px;
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.hero-left h2{
+
+    margin-top:10px;
+
+    font-size:24px;
+
+    font-weight:500;
+
+    opacity:.95;
+
+}
+
+.hero-left p{
+
+    margin-top:18px;
+
+    font-size:17px;
+
+    opacity:.9;
+
+}
+
+.hero-right{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-right .report-btn{
+
+    background:white;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+.hero-right .report-btn:hover{
+
+    background:#eef2ff;
+
+}
+
+/* ======================================================
+   SECTION TITLE
+====================================================== */
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#1e293b;
+
+    margin-bottom:25px;
+
+    border-left:5px solid #2563eb;
+
+    padding-left:16px;
+
+}
+
+/* ======================================================
+   BETTER SECTION CARD
+====================================================== */
+
+.section-card{
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.section-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.10);
+
+}
+
+/* ======================================================
+   BETTER DASHBOARD BACKGROUND
+====================================================== */
+
+.dashboard{
+
+    min-height:100vh;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        #f8fbff 0%,
+
+        #eef5ff 100%
+
+    );
+
+}
+
+/* ======================================================
+   LOADING ANIMATION
+====================================================== */
+
+.loader{
+
+    width:70px;
+
+    height:70px;
+
+    border:7px solid #dbeafe;
+
+    border-top:7px solid #2563eb;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:25px;
+
+}
+
+.loading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.loading h2{
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.loading p{
+
+    color:#64748b;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ======================================================
+   EMPTY DASHBOARD
+====================================================== */
+
+.empty-dashboard{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:70px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.empty-dashboard h2{
+
+    font-size:34px;
+
+}
+
+.empty-dashboard p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+/* ======================================================
+   RESPONSIVE HERO
+====================================================== */
+
+@media(max-width:900px){
+
+.hero-section{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:25px;
+
+}
+
+.hero-left h1{
+
+    font-size:34px;
+
+}
+
+.hero-left h2{
+
+    font-size:22px;
+
+}
+
+.hero-right{
+
+    width:100%;
+
+}
+
+.hero-right .report-btn{
+
+    width:100%;
+
+}
+
+}

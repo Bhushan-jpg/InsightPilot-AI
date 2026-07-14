@@ -1,5 +1,18 @@
 import "./KPICards.css";
 
+const icons = [
+    "💰",
+    "📈",
+    "📊",
+    "🛒",
+    "👥",
+    "🏆",
+    "📦",
+    "📉",
+    "🚀",
+    "⭐"
+];
+
 function KPICards({ data }) {
 
     if (!data || !data.kpis) return null;
@@ -8,28 +21,46 @@ function KPICards({ data }) {
 
         <div className="kpi-section">
 
-            <h2>📊 Business Overview</h2>
-
             <div className="kpi-grid">
 
-                {
-                    data.kpis.map((card,index)=>(
+                {data.kpis.map((card, index) => (
 
-                        <div
-                            className="kpi-card"
-                            key={index}
-                        >
+                    <div
+                        className="kpi-card"
+                        key={index}
+                    >
 
-                            <h3>{card.title}</h3>
+                        <div className="kpi-top">
 
-                            <h1>{card.value}</h1>
+                            <div className="kpi-icon">
 
-                            <p>{card.description}</p>
+                                {icons[index % icons.length]}
+
+                            </div>
+
+                            <div className="kpi-title">
+
+                                {card.title}
+
+                            </div>
 
                         </div>
 
-                    ))
-                }
+                        <div className="kpi-value">
+
+                            {card.value}
+
+                        </div>
+
+                        <div className="kpi-description">
+
+                            {card.description}
+
+                        </div>
+
+                    </div>
+
+                ))}
 
             </div>
 
