@@ -62,7 +62,7 @@ function Dashboard() {
 
             await axios.post(
 
-                "http://127.0.0.1:8000/report",
+                "https://insightpilot-ai-zm16.onrender.com/report",
 
                 reportData
 
@@ -70,7 +70,7 @@ function Dashboard() {
 
             window.open(
 
-                "http://127.0.0.1:8000/download-report",
+                "https://insightpilot-ai-zm16.onrender.com/download...",
 
                 "_blank"
 

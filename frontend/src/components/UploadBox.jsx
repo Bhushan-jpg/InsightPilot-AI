@@ -27,7 +27,7 @@ function UploadBox({ setData }) {
 
 
             const response = await axios.post(
-                "http://127.0.0.1:8000/upload",
+                "https://insightpilot-ai-zm16.onrender.com/upload",
                 formData
             );
 
