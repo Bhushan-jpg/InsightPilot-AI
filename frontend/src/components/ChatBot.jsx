@@ -61,7 +61,7 @@ function ChatBot() {
 
             const response = await axios.post(
 
-                "http://localhost:8000/chat",
+                "https://insightpilot-ai-zm16.onrender.com/chat",
 
                 {
 
