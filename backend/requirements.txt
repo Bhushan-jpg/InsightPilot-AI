@@ -17,6 +17,6 @@ requests
 pymysql
 psycopg2-binary
 passlib[bcrypt]
-bcrypt
+bcrypt==4.1.2
 python-jose[cryptography]
 email-validator
