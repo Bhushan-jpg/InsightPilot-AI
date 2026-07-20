@@ -5,9 +5,12 @@ from routes.users import router as user_router
 from routes.upload import router as upload_router
 from routes.chat import router as chat_router
 from routes.report import router as report_router
+from database import engine
+from models import Base
 
 
 app = FastAPI()
+Base.metadata.create_all(bind=engine)
 
 
 app.add_middleware(
