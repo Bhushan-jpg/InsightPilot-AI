@@ -88,104 +88,46 @@ def signup(
 # ==========================
 
 
+from traceback import format_exc
+
 @router.post("/login")
-def login(
-    user: UserLogin,
-    db: Session = Depends(get_db)
-):
+def login(user: UserLogin, db: Session = Depends(get_db)):
+    try:
+        db_user = db.query(User).filter(User.email == user.email).first()
 
+        if not db_user:
+            raise HTTPException(
+                status_code=401,
+                detail="Invalid Email or Password"
+            )
 
-    db_user = db.query(User).filter(
-        User.email == user.email
-    ).first()
-
-
-
-    if not db_user:
-
-
-        raise HTTPException(
-
-            status_code=401,
-
-            detail="Invalid Email or Password"
-
+        password_match = verify_password(
+            user.password,
+            db_user.password
         )
 
+        if not password_match:
+            raise HTTPException(
+                status_code=401,
+                detail="Invalid Email or Password"
+            )
 
-
-
-
-    password_match = verify_password(
-
-        user.password,
-
-        db_user.password
-
-    )
-
-
-
-
-    if not password_match:
-
-
-        raise HTTPException(
-
-            status_code=401,
-
-            detail="Invalid Email or Password"
-
+        token = create_access_token(
+            {"sub": db_user.email}
         )
 
-
-
-
-
-
-    token = create_access_token(
-
-        {
-
-            "sub":
-            db_user.email
-
+        return {
+            "access_token": token,
+            "token_type": "bearer",
+            "user": {
+                "name": db_user.name,
+                "email": db_user.email
+            }
         }
 
-    )
-
-
-
-
-
-
-    return {
-
-
-        "access_token":
-        token,
-
-
-        "token_type":
-        "bearer",
-
-
-
-        "user":
-
-        {
-
-            "name":
-            db_user.name,
-
-
-            "email":
-            db_user.email
-
-        }
-
-
-    }
+    except Exception as e:
+        print(format_exc())
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 
