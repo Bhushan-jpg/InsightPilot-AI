@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Navbar.css";
 
 function Navbar() {
+
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const menuItems = [
 
@@ -20,79 +23,76 @@ function Navbar() {
 
         const section = document.getElementById(id);
 
-        console.log("Clicked:", id);
-        console.log("Found:", section);
-
-        if (!section) {
-
-            alert(id + " section not found");
-
-            return;
-
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         }
 
-        section.scrollIntoView({
-
-            behavior: "smooth",
-            block: "start"
-
-        });
-
+        setMenuOpen(false);
     };
 
     return (
 
-        <aside className="sidebar">
+        <>
 
-            <div className="logo">
+            <button
+                className="mobile-menu-btn"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                ☰
+            </button>
 
-                🚀
+            {menuOpen && (
+                <div
+                    className="overlay"
+                    onClick={() => setMenuOpen(false)}
+                />
+            )}
 
-                <div>
+            <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
 
-                    <h2>InsightPilot</h2>
+                <div className="logo">
 
-                    <p>Enterprise AI</p>
+                    🚀
+
+                    <div>
+
+                        <h2>InsightPilot</h2>
+
+                        <p>Enterprise AI</p>
+
+                    </div>
 
                 </div>
 
-            </div>
+                <div className="menu">
 
-            <div className="menu">
-
-                {
-
-                    menuItems.map((item) => (
+                    {menuItems.map((item) => (
 
                         <button
-
                             key={item.id}
-
                             onClick={() => scrollToSection(item.id)}
-
                         >
 
                             <span className="icon">
-
                                 {item.icon}
-
                             </span>
 
                             <span>
-
                                 {item.label}
-
                             </span>
 
                         </button>
 
-                    ))
+                    ))}
 
-                }
+                </div>
 
-            </div>
+            </aside>
 
-        </aside>
+        </>
 
     );
 
