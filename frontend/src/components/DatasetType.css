@@ -1,31 +1,35 @@
-.dataset-type-card{
+/* ==========================
+   DATASET TYPE CARD
+========================== */
 
-    background:white;
-
-    margin:20px 0;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    text-align:center;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-
+.dataset-type-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: var(--transition-smooth);
 }
 
-.dataset-type-card h1{
-
-    color:#2563eb;
-
-    margin:15px 0;
-
+.dataset-type-card h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 
-.dataset-type-card p{
+.dataset-type-card h1 {
+    color: var(--primary);
+    margin: 15px 0;
+    font-size: 28px;
+    font-weight: 800;
+}
 
-    color:#666;
-
-    font-size:18px;
-
+.dataset-type-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
 }

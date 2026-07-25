@@ -33,6 +33,7 @@ const COLORS = [
 function Charts({ data }) {
 
   const [openChart, setOpenChart] = useState(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const downloadChart = async (index) => {
 
@@ -84,7 +85,7 @@ function Charts({ data }) {
 
       </div>
 
-      <div className="chart-grid">
+      <div className={`chart-grid ${isExpanded ? "expanded" : ""}`}>
 
         {data.charts.map((chart, index) => (
 
@@ -410,6 +411,15 @@ function Charts({ data }) {
         ))}
 
       </div>
+
+      {data.charts.length > 1 && (
+        <button 
+          className="mobile-toggle-btn"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? "Show Less" : "View More"}
+        </button>
+      )}
 
     </div>
 

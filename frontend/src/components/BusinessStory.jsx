@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./BusinessStory.css";
 
 function BusinessStory({ data }) {
+
+    const [isExpanded, setIsExpanded] = useState(false);
 
     if (!data || !data.business_story) {
         return null;
@@ -8,7 +11,7 @@ function BusinessStory({ data }) {
 
     return (
 
-        <div className="business-story-card">
+        <div className={`business-story-card ${isExpanded ? "expanded" : ""}`}>
 
             {/* Header */}
 
@@ -109,6 +112,13 @@ function BusinessStory({ data }) {
                 </p>
 
             </div>
+
+            <button 
+                className="mobile-toggle-btn"
+                onClick={() => setIsExpanded(!isExpanded)}
+            >
+                {isExpanded ? "Read Less" : "Read More"}
+            </button>
 
         </div>
 

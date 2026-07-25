@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Recommendations.css";
 
 function Recommendations({ data }) {
+
+    const [isExpanded, setIsExpanded] = useState(false);
 
     if (!data) return null;
 
@@ -75,7 +78,7 @@ function Recommendations({ data }) {
 
             </div>
 
-            <div className="recommendation-grid">
+            <div className={`recommendation-grid ${isExpanded ? "expanded" : ""}`}>
 
                 {
 
@@ -101,11 +104,11 @@ function Recommendations({ data }) {
 
                                 <span
 
-                                    className={`priority ${priorities[index].toLowerCase()}`}
+                                    className={`priority ${priorities[index % priorities.length].toLowerCase()}`}
 
                                 >
 
-                                    {priorities[index]}
+                                    {priorities[index % priorities.length]}
 
                                 </span>
 
@@ -146,6 +149,15 @@ function Recommendations({ data }) {
                 }
 
             </div>
+
+            {recommendations.length > 3 && (
+                <button 
+                    className="mobile-toggle-btn"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                >
+                    {isExpanded ? "Show Less" : "View More"}
+                </button>
+            )}
 
         </div>
 

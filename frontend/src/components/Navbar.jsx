@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 function Navbar() {
 
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const menuItems = [
 
@@ -23,39 +23,62 @@ function Navbar() {
 
         const section = document.getElementById(id);
 
-        if (section) {
-            section.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+        console.log("Clicked:", id);
+        console.log("Found:", section);
+
+        if (!section) {
+
+            alert(id + " section not found");
+
+            return;
+
         }
 
-        setMenuOpen(false);
+        section.scrollIntoView({
+
+            behavior: "smooth",
+            block: "start"
+
+        });
+
+        setIsOpen(false);
+
     };
 
     return (
 
         <>
+            {/* Mobile fixed header */}
+            <div className="mobile-header">
+                <div className="mobile-logo">
+                    <span className="logo-emoji">🚀</span>
+                    <div>
+                        <h2>InsightPilot</h2>
+                        <p>Enterprise AI</p>
+                    </div>
+                </div>
+                <button 
+                    className="hamburger-btn" 
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle Menu"
+                >
+                    {isOpen ? "✕" : "☰"}
+                </button>
+            </div>
 
-            <button
-                className="mobile-menu-btn"
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                ☰
-            </button>
-
-            {menuOpen && (
-                <div
-                    className="overlay"
-                    onClick={() => setMenuOpen(false)}
+            {/* Mobile backdrop */}
+            {isOpen && (
+                <div 
+                    className="sidebar-backdrop" 
+                    onClick={() => setIsOpen(false)}
                 />
             )}
 
-            <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
+            <aside className={`sidebar ${isOpen ? "open" : ""}`}>
 
                 <div className="logo">
 
-                    🚀
+                    <span className="logo-emoji">🚀</span>
 
                     <div>
 
@@ -69,29 +92,39 @@ function Navbar() {
 
                 <div className="menu">
 
-                    {menuItems.map((item) => (
+                    {
 
-                        <button
-                            key={item.id}
-                            onClick={() => scrollToSection(item.id)}
-                        >
+                        menuItems.map((item) => (
 
-                            <span className="icon">
-                                {item.icon}
-                            </span>
+                            <button
 
-                            <span>
-                                {item.label}
-                            </span>
+                                key={item.id}
 
-                        </button>
+                                onClick={() => scrollToSection(item.id)}
 
-                    ))}
+                            >
+
+                                <span className="icon">
+
+                                    {item.icon}
+
+                                </span>
+
+                                <span>
+
+                                    {item.label}
+
+                                </span>
+
+                            </button>
+
+                        ))
+
+                    }
 
                 </div>
 
             </aside>
-
         </>
 
     );

@@ -1,528 +1,313 @@
 /* =====================================================
-   Charts Section
+   Charts Section Layout
 ===================================================== */
 
-.charts-section{
-
-    width:100%;
-
-    animation:fadeUp .6s ease;
-
+.charts-section {
+    width: 100%;
+    animation: fadeUp 0.6s ease-out;
 }
 
-.charts-top{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:25px;
-
+.charts-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.charts-top h2{
-
-    font-size:30px;
-
-    color:#1e293b;
-
-    font-weight:700;
-
-    margin-bottom:8px;
-
+.charts-top h2 {
+    font-size: 24px;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
 }
 
-.charts-top p{
-
-    color:#64748b;
-
-    font-size:15px;
-
+.charts-top p {
+    color: var(--text-secondary);
+    font-size: 14px;
 }
 
 /* =====================================================
-   Grid
+   Grid configuration
 ===================================================== */
 
-.chart-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(560px,1fr));
-
-    gap:28px;
-
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 28px;
 }
 
 /* =====================================================
-   Card
+   Card Styling
 ===================================================== */
 
-.chart-card{
-
-    background:#ffffff;
-
-    border-radius:22px;
-
-    padding:24px;
-
-    border:1px solid #edf2f7;
-
-    box-shadow:
-
-        0 8px 25px rgba(15,23,42,.06);
-
-    transition:.35s;
-
-    overflow:hidden;
-
+.chart-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+    overflow: hidden;
 }
 
-.chart-card:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:
-
-        0 18px 45px rgba(79,70,229,.18);
-
+.chart-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(37, 99, 235, 0.15);
 }
 
 /* =====================================================
-   Header
+   Header within Card
 ===================================================== */
 
-.chart-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    margin-bottom:20px;
-
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 16px;
 }
 
-.chart-header h3{
-
-    font-size:22px;
-
-    color:#111827;
-
-    margin-top:10px;
-
-    margin-bottom:6px;
-
+.chart-header h3 {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-top: 8px;
+    margin-bottom: 6px;
+    font-weight: 700;
 }
 
-.chart-header p{
-
-    color:#6b7280;
-
-    font-size:14px;
-
-    line-height:1.5;
-
+.chart-header p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
 }
 
-.chart-type{
-
-    display:inline-block;
-
-    padding:6px 14px;
-
-    border-radius:30px;
-
-    background:#eef2ff;
-
-    color:#4f46e5;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    letter-spacing:.6px;
-
+.chart-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 30px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-.chart-actions{
-
-    display:flex;
-
-    gap:10px;
-
+.chart-actions {
+    display: flex;
+    gap: 8px;
 }
 
-.chart-icon{
-
-    width:42px;
-
-    height:42px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#f8fafc;
-
-    cursor:pointer;
-
-    font-size:18px;
-
-    transition:.3s;
-
+.chart-icon {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-main);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
 }
 
-.chart-icon:hover{
-
-    background:#4f46e5;
-
-    color:#fff;
-
-    transform:scale(1.08);
-
+.chart-icon:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+    border-color: var(--primary);
 }
 
 /* =====================================================
-   Chart Area
+   Chart Area Wrapper
 ===================================================== */
 
-.chart-wrapper{
-
-    margin-top:10px;
-
-    border-radius:18px;
-
-    background:#fafcff;
-
-    padding:18px;
-
+.chart-wrapper {
+    margin-top: 8px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-main);
+    padding: 16px;
+    border: 1px solid var(--border);
 }
 
-.recharts-responsive-container{
-
-    margin-bottom:18px;
-
+.recharts-responsive-container {
+    margin-bottom: 12px;
 }
 
 /* =====================================================
-   About Button
+   About (AI Analysis) Button
 ===================================================== */
 
-.about-btn{
-
-    width:100%;
-
-    border:none;
-
-    cursor:pointer;
-
-    border-radius:14px;
-
-    padding:14px;
-
-    margin-top:12px;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    color:#fff;
-
-    background:linear-gradient(
-
-        135deg,
-
-        #4f46e5,
-
-        #2563eb
-
-    );
-
-    transition:.3s;
-
+.about-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
 }
 
-.about-btn:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-
-        0 10px 25px rgba(79,70,229,.35);
-
-}
-/* =====================================================
-   AI Analysis
-===================================================== */
-
-.chart-analysis{
-
-    margin-top:22px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:16px;
-
-}
-
-.analysis-card{
-
-    padding:18px;
-
-    border-radius:16px;
-
-    transition:.3s;
-
-    border-left:6px solid transparent;
-
-}
-
-.analysis-card:hover{
-
-    transform:translateY(-3px);
-
-}
-
-.analysis-title{
-
-    font-size:17px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-}
-
-.analysis-card p{
-
-    color:#475569;
-
-    line-height:1.7;
-
-    font-size:15px;
-
-}
-
-/* Different Colors */
-
-.explanation{
-
-    background:#eef4ff;
-
-    border-left-color:#2563eb;
-
-}
-
-.insight{
-
-    background:#ecfdf5;
-
-    border-left-color:#10b981;
-
-}
-
-.recommendation{
-
-    background:#fff7ed;
-
-    border-left-color:#f59e0b;
-
+.about-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
 /* =====================================================
-   Confidence
+   AI Analysis details
 ===================================================== */
 
-.confidence-box{
-
-    margin-top:15px;
-
-    padding:18px;
-
-    border-radius:16px;
-
-    background:#f8fafc;
-
+.chart-analysis {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeUp 0.3s ease-out;
 }
 
-.confidence-box span{
-
-    display:block;
-
-    font-weight:600;
-
-    color:#334155;
-
-    margin-bottom:10px;
-
+.analysis-card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+    border-left: 4px solid transparent;
 }
 
-.confidence-bar{
-
-    width:100%;
-
-    height:10px;
-
-    background:#e2e8f0;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin-bottom:10px;
-
+.analysis-card:hover {
+    transform: translateX(3px);
 }
 
-.confidence-fill{
-
-    height:100%;
-
-    border-radius:20px;
-
-    background:linear-gradient(
-
-        90deg,
-
-        #10b981,
-
-        #22c55e
-
-    );
-
+.analysis-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.confidence-box strong{
+.analysis-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 13px;
+    margin: 0;
+}
 
-    color:#10b981;
+/* Color Coding */
 
-    font-size:18px;
+.explanation {
+    background: var(--primary-light);
+    border-left-color: var(--primary);
+    color: var(--primary);
+}
 
+.insight {
+    background: #ecfdf5;
+    border-left-color: var(--success);
+    color: #065f46;
+}
+
+.recommendation {
+    background: #fff7ed;
+    border-left-color: var(--warning);
+    color: #9a3412;
 }
 
 /* =====================================================
-   Animation
+   Confidence Meter
 ===================================================== */
 
-@keyframes fadeUp{
+.confidence-box {
+    margin-top: 10px;
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
 
-    from{
+.confidence-box span {
+    display: block;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 13px;
+}
 
-        opacity:0;
+.confidence-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
 
-        transform:translateY(25px);
+.confidence-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--success) 0%, #34d399 100%);
+}
 
+.confidence-box strong {
+    color: var(--success);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* =====================================================
+   Keyframe Animations
+===================================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   RESPONSIVE STYLES
+===================================================== */
+
+@media (max-width: 1200px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .charts-top h2 {
+        font-size: 20px;
+    }
+    
+    .chart-card {
+        padding: 16px;
+        border-radius: var(--radius-lg);
+    }
+    
+    .chart-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .chart-actions {
+        justify-content: flex-end;
+    }
+    
+    .chart-wrapper {
+        padding: 10px;
     }
 
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
+    .chart-grid:not(.expanded) > .chart-card:not(:first-child) {
+        display: none;
     }
-
-}
-
-/* =====================================================
-   Responsive
-===================================================== */
-
-@media(max-width:1200px){
-
-.chart-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.chart-card{
-
-    padding:18px;
-
-}
-
-.chart-header{
-
-    flex-direction:column;
-
-    gap:15px;
-
-}
-
-.chart-actions{
-
-    width:100%;
-
-    justify-content:flex-end;
-
-}
-
-.chart-header h3{
-
-    font-size:20px;
-
-}
-
-.chart-wrapper{
-
-    padding:12px;
-
-}
-
-.about-btn{
-
-    font-size:14px;
-
-}
-
-.analysis-card{
-
-    padding:15px;
-
-}
-
-}
-
-@media(max-width:500px){
-
-.charts-top h2{
-
-    font-size:24px;
-
-}
-
-.chart-card{
-
-    border-radius:18px;
-
-}
-
-.chart-type{
-
-    font-size:11px;
-
-}
-
-.analysis-title{
-
-    font-size:15px;
-
-}
-
-.analysis-card p{
-
-    font-size:14px;
-
-}
-
 }

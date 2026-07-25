@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./AISummary.css";
 
 function AISummary({ data }) {
+
+    const [isExpanded, setIsExpanded] = useState(false);
 
     if (!data) return null;
 
@@ -38,7 +41,7 @@ function AISummary({ data }) {
 
     return (
 
-        <div className="ai-summary-card">
+        <div className={`ai-summary-card ${isExpanded ? "expanded" : ""}`}>
 
             {/* Header */}
 
@@ -155,6 +158,13 @@ function AISummary({ data }) {
                 </p>
 
             </div>
+
+            <button 
+                className="mobile-toggle-btn"
+                onClick={() => setIsExpanded(!isExpanded)}
+            >
+                {isExpanded ? "Read Less" : "Read More"}
+            </button>
 
         </div>
 

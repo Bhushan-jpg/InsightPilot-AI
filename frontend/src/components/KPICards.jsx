@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./KPICards.css";
 
 const icons = [
@@ -15,13 +16,15 @@ const icons = [
 
 function KPICards({ data }) {
 
+    const [isExpanded, setIsExpanded] = useState(false);
+
     if (!data || !data.kpis) return null;
 
     return (
 
         <div className="kpi-section">
 
-            <div className="kpi-grid">
+            <div className={`kpi-grid ${isExpanded ? "expanded" : ""}`}>
 
                 {data.kpis.map((card, index) => (
 
@@ -63,6 +66,15 @@ function KPICards({ data }) {
                 ))}
 
             </div>
+
+            {data.kpis.length > 1 && (
+                <button 
+                    className="mobile-toggle-btn"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                >
+                    {isExpanded ? "Show Less" : "View More"}
+                </button>
+            )}
 
         </div>
 

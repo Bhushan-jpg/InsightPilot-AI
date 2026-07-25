@@ -1,496 +1,249 @@
-/* =====================================================
-   NAVBAR CSS
-   PART 1
-===================================================== */
+/* ==========================================
+   SIDEBAR & LAYOUT SYSTEM
+========================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    padding: 30px 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: transform var(--transition-smooth);
 }
 
-/* ===========================
-   MOBILE BUTTON
-=========================== */
-
-.mobile-menu-btn{
-
-    display:none;
-
-    position:fixed;
-
-    top:18px;
-
-    left:18px;
-
-    width:48px;
-
-    height:48px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#2563eb;
-
-    color:#fff;
-
-    font-size:24px;
-
-    cursor:pointer;
-
-    z-index:2000;
-
-    box-shadow:0 10px 25px rgba(37,99,235,.30);
-
-    transition:.3s;
-
-}
-
-.mobile-menu-btn:hover{
-
-    transform:scale(1.05);
-
-}
-
-/* ===========================
-   OVERLAY
-=========================== */
-
-.overlay{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100vh;
-
-    background:rgba(0,0,0,.45);
-
-    z-index:998;
-
-}
-
-/* ===========================
-   SIDEBAR
-=========================== */
-
-.sidebar{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:270px;
-
-    height:100vh;
-
-    background:#ffffff;
-
-    border-right:1px solid #e5e7eb;
-
-    box-shadow:8px 0 30px rgba(0,0,0,.08);
-
-    padding:25px 18px;
-
-    overflow-y:auto;
-
-    z-index:999;
-
-    transition:.35s;
-
-}
-
-/* ===========================
+/* ==========================================
    LOGO
-=========================== */
+========================================== */
 
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:35px;
-
-    padding-bottom:20px;
-
-    border-bottom:1px solid #eef2ff;
-
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
 }
 
-.logo h2{
-
-    font-size:24px;
-
-    color:#1e293b;
-
-    margin-bottom:4px;
-
+.logo-emoji {
+    font-size: 28px;
+    background: var(--primary-light);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
 }
 
-.logo p{
-
-    font-size:14px;
-
-    color:#64748b;
-
+.logo h2 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-/* ===========================
-   MENU
-=========================== */
-
-.menu{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
-}
-/* =====================================================
-   NAVBAR CSS
-   PART 2
-===================================================== */
-
-/* ===========================
-   MENU BUTTON
-=========================== */
-
-.menu button{
-
-    width:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    border:none;
-
-    outline:none;
-
-    background:transparent;
-
-    border-radius:14px;
-
-    padding:14px 16px;
-
-    cursor:pointer;
-
-    transition:.30s;
-
-    color:#475569;
-
-    font-size:15px;
-
-    font-weight:500;
-
-    position:relative;
-
+.logo p {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
-/* ===========================
-   ICON
-=========================== */
+/* ==========================================
+   MENU & BUTTONS
+========================================== */
 
-.menu button .icon{
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:12px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:#eef4ff;
-
-    font-size:20px;
-
-    transition:.30s;
-
-    flex-shrink:0;
-
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* ===========================
-   HOVER
-=========================== */
-
-.menu button:hover{
-
-    background:#eef4ff;
-
-    color:#2563eb;
-
-    transform:translateX(6px);
-
+.menu button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    position: relative;
 }
 
-.menu button:hover .icon{
-
-    background:#2563eb;
-
-    color:white;
-
+.menu button .icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-sm);
+    background: var(--bg-main);
+    font-size: 18px;
+    transition: var(--transition-smooth);
 }
 
-/* ===========================
-   ACTIVE
-=========================== */
-
-.menu button.active{
-
-    background:linear-gradient(
-        135deg,
-        #2563eb,
-        #4f46e5
-    );
-
-    color:white;
-
-    box-shadow:0 10px 24px rgba(37,99,235,.25);
-
+/* Hover State */
+.menu button:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+    transform: translateX(4px);
 }
 
-.menu button.active .icon{
-
-    background:white;
-
-    color:#2563eb;
-
+.menu button:hover .icon {
+    background: var(--primary);
+    color: white;
 }
 
-.menu button.active::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:-18px;
-
-    top:8px;
-
-    bottom:8px;
-
-    width:5px;
-
-    border-radius:10px;
-
-    background:#2563eb;
-
+/* Active Indicator Line */
+.menu button.active {
+    background: var(--primary-light);
+    color: var(--primary);
 }
 
-/* ===========================
-   SCROLLBAR
-=========================== */
-
-.sidebar::-webkit-scrollbar{
-
-    width:8px;
-
+.menu button.active .icon {
+    background: var(--primary);
+    color: white;
 }
 
-.sidebar::-webkit-scrollbar-track{
-
-    background:#f1f5f9;
-
+.menu button.active::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--primary);
 }
 
-.sidebar::-webkit-scrollbar-thumb{
+/* ==========================================
+   MOBILE BAR AND MENU TOGGLE
+========================================== */
 
-    background:#cbd5e1;
-
-    border-radius:20px;
-
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    box-shadow: var(--shadow-sm);
 }
 
-.sidebar::-webkit-scrollbar-thumb:hover{
-
-    background:#94a3b8;
-
-}
-/* =====================================================
-   NAVBAR CSS
-   PART 3 (Responsive)
-===================================================== */
-
-/* ===========================
-   TABLET
-=========================== */
-
-@media (max-width:1024px){
-
-.sidebar{
-
-    width:260px;
-
+.mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.mobile-logo .logo-emoji {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
 }
 
-/* ===========================
-   MOBILE
-=========================== */
-
-@media (max-width:768px){
-
-.mobile-menu-btn{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
+.mobile-logo h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
-.sidebar{
-
-    transform:translateX(-100%);
-
-    width:280px;
-
-    height:100vh;
-
-    top:0;
-
-    left:0;
-
-    border-right:none;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.20);
-
+.mobile-logo p {
+    margin: 0;
+    font-size: 11px;
+    color: var(--text-muted);
 }
 
-.sidebar.open{
-
-    transform:translateX(0);
-
+.hamburger-btn {
+    background: var(--primary-light);
+    border: none;
+    color: var(--primary);
+    font-size: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
 }
 
-.logo{
-
-    margin-top:45px;
-
+.hamburger-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
 }
 
-.menu{
-
-    margin-top:10px;
-
+/* Mobile overlay backdrop */
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    animation: fadeIn 0.2s ease-out;
 }
 
-.menu button{
-
-    padding:15px;
-
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.menu button span{
+/* ==========================================
+   RESPONSIVE STYLES
+========================================== */
 
-    font-size:15px;
+@media (max-width: 1100px) {
+    .mobile-header {
+        display: flex;
+    }
 
-}
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: var(--shadow-xl);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        z-index: 1000;
+        background: var(--bg-card);
+    }
 
-}
+    .sidebar.open {
+        transform: translateX(0);
+    }
 
-/* ===========================
-   SMALL MOBILE
-=========================== */
-
-@media(max-width:480px){
-
-.sidebar{
-
-    width:240px;
-
-}
-
-.logo h2{
-
-    font-size:22px;
-
-}
-
-.logo p{
-
-    font-size:13px;
-
-}
-
-.menu button{
-
-    gap:12px;
-
-    padding:13px;
-
-}
-
-.menu button .icon{
-
-    width:38px;
-
-    height:38px;
-
-    font-size:18px;
-
-}
-
-.mobile-menu-btn{
-
-    width:45px;
-
-    height:45px;
-
-    font-size:22px;
-
-    top:14px;
-
-    left:14px;
-
-}
-
-}
-
-/* ===========================
-   DESKTOP
-=========================== */
-
-@media(min-width:769px){
-
-.overlay{
-
-    display:none;
-
-}
-
-.mobile-menu-btn{
-
-    display:none;
-
-}
-
-.sidebar{
-
-    transform:translateX(0);
-
-}
-
-}
+    .menu button.active::before {
+        display: none;
+    }
+}

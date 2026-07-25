@@ -2,216 +2,123 @@
    BUSINESS STORY CARD
 ========================================== */
 
-.business-story-card{
-
-    background:#ffffff;
-
-    border-radius:22px;
-
-    padding:30px;
-
-    border:1px solid #e5e7eb;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    transition:.35s;
-
+.business-story-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-smooth);
 }
 
-.business-story-card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 20px 45px rgba(37,99,235,.15);
-
+.business-story-card:hover {
+    box-shadow: var(--shadow-xl);
 }
 
 /* ==========================================
    HEADER
 ========================================== */
 
-.story-header{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    margin-bottom:30px;
-
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
 }
 
-.story-icon{
-
-    width:70px;
-
-    height:70px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:18px;
-
-    font-size:34px;
-
-    color:white;
-
-    background:linear-gradient(
-        135deg,
-        #2563eb,
-        #4f46e5
-    );
-
-    box-shadow:0 10px 25px rgba(37,99,235,.25);
-
+.story-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2);
 }
 
-.story-header h2{
-
-    margin:0;
-
-    font-size:28px;
-
-    font-weight:700;
-
-    color:#1e293b;
-
+.story-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
 }
 
-.story-header p{
-
-    margin-top:8px;
-
-    color:#64748b;
-
-    font-size:15px;
-
+.story-header p {
+    margin: 4px 0 0 0;
+    color: var(--text-secondary);
+    font-size: 13px;
 }
 
 /* ==========================================
-   STORY SECTION
+   STORY SECTIONS
 ========================================== */
 
-.story-section{
-
-    background:#ffffff;
-
-    border:1px solid #eef2ff;
-
-    border-radius:16px;
-
-    padding:22px;
-
-    margin-bottom:22px;
-
-    transition:.3s;
-
+.story-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    margin-bottom: 20px;
+    transition: var(--transition-smooth);
 }
 
-.story-section:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
-
+.story-section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-.story-section h3{
-
-    margin-top:0;
-
-    margin-bottom:15px;
-
-    color:#1e293b;
-
-    font-size:20px;
-
+.story-section h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 700;
 }
 
-.story-section p{
+.story-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 14px;
+    white-space: pre-line;
+    margin: 0;
+}
 
-    color:#475569;
+/* Highlight box (AI Analysis) */
+.highlight-story {
+    background: var(--primary-light);
+    border-left: 5px solid var(--primary);
+    border-color: var(--primary-light) var(--primary-light) var(--primary-light) var(--primary);
+}
 
-    line-height:1.9;
-
-    font-size:16px;
-
-    white-space:pre-line;
-
+/* Recommendation box */
+.recommendation-story {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #eef2ff 100%);
+    border-left: 5px solid var(--secondary);
+    border-color: rgba(79, 70, 229, 0.05) rgba(79, 70, 229, 0.05) rgba(79, 70, 229, 0.05) var(--secondary);
 }
 
 /* ==========================================
-   AI ANALYSIS
+   RESPONSIVE & COLLAPSE STYLES
 ========================================== */
 
-.highlight-story{
+@media (max-width: 768px) {
+    .story-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
 
-    background:linear-gradient(
-        135deg,
-        #f8fbff,
-        #eef4ff
-    );
+    .story-section {
+        padding: 16px;
+    }
 
-    border-left:6px solid #2563eb;
-
-}
-
-/* ==========================================
-   RECOMMENDATION
-========================================== */
-
-.recommendation-story{
-
-    background:linear-gradient(
-        135deg,
-        #f3f8ff,
-        #eef2ff
-    );
-
-    border-left:6px solid #4f46e5;
-
-}
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:768px){
-
-.story-header{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-.story-header h2{
-
-    font-size:24px;
-
-}
-
-.story-section{
-
-    padding:18px;
-
-}
-
-.story-section h3{
-
-    font-size:18px;
-
-}
-
-.story-section p{
-
-    font-size:15px;
-
-}
-
+    /* Mobile Collapse Rule */
+    .business-story-card:not(.expanded) .story-section:not(:first-child) {
+        display: none;
+    }
 }

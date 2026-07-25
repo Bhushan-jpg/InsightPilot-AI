@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Findings.css";
 
 function Findings({ data }) {
+
+    const [isExpanded, setIsExpanded] = useState(false);
 
     if (!data) return null;
 
@@ -69,7 +72,7 @@ function Findings({ data }) {
 
             </div>
 
-            <div className="findings-grid">
+            <div className={`findings-grid ${isExpanded ? "expanded" : ""}`}>
 
                 {
 
@@ -130,6 +133,15 @@ function Findings({ data }) {
                 }
 
             </div>
+
+            {findings.length > 3 && (
+                <button 
+                    className="mobile-toggle-btn"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                >
+                    {isExpanded ? "Show Less" : "View More"}
+                </button>
+            )}
 
         </div>
 
